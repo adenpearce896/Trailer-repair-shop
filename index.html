@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JMaster Trailer Repair — What Is a Trailer Repair Shop?</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.5;
+    }
+
+    /* FLUID CONTAINER – full width with responsive padding */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: clamp(18px, 4vw, 70px);
+      padding-right: clamp(18px, 4vw, 70px);
+    }
+
+    /* HEADER – compact, professional, black/white/orange */
+    .article-header {
+      background: #ffffff;
+      border-bottom: 3px solid #ff6600; /* neon orange accent */
+      padding: 14px 0 12px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 24px;
+    }
+
+    .header-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo-img {
+      max-width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #000000;
+      border-left: 2px solid #ff6600;
+      padding-left: 14px;
+    }
+
+    .header-phone {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #000000;
+      background: #f5f5f5;
+      padding: 6px 18px;
+      border-radius: 40px;
+      border: 1px solid #e0e0e0;
+      white-space: nowrap;
+    }
+
+    .header-phone span {
+      color: #ff6600;
+      font-weight: 700;
+    }
+
+    /* TITLE SECTION */
+    .hero-title {
+      background: #ffffff;
+      padding: 34px 0 28px 0;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .hero-title h1 {
+      font-size: clamp(2rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      color: #ff6600; /* neon orange */
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      max-width: 1100px;
+      margin-bottom: 6px;
+    }
+
+    .title-accent {
+      display: block;
+      width: 90px;
+      height: 5px;
+      background: #ff6600;
+      margin-top: 14px;
+      border-radius: 4px;
+    }
+
+    /* ARTICLE CONTENT – full width, justified paragraphs */
+    .article-body {
+      padding: 32px 0 48px 0;
+      background: #ffffff;
+    }
+
+    .article-body p {
+      text-align: justify;
+      font-size: clamp(1rem, 1.1vw, 1.15rem);
+      line-height: 1.6;
+      margin-bottom: 1.1rem;
+      color: #000000;
+      max-width: 100%;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+      font-weight: 700;
+      color: #ff6600;
+      margin: 2.2rem 0 0.6rem 0;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .article-body h3 {
+      font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+      font-weight: 700;
+      color: #000000;
+      margin: 1.8rem 0 0.4rem 0;
+      text-align: left;
+    }
+
+    .article-body h4 {
+      font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+      font-weight: 700;
+      color: #ff6600;
+      margin: 1.6rem 0 0.3rem 0;
+      text-align: left;
+    }
+
+    /* FAQ list styling (preserves content) */
+    .article-body ul, .article-body ol {
+      text-align: justify;
+      padding-left: 1.8rem;
+      margin: 0.75rem 0 1.2rem 0;
+      line-height: 1.6;
+    }
+
+    .article-body li {
+      margin-bottom: 0.4rem;
+      text-align: justify;
+    }
+
+    .article-body strong {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    /* brand accent box (for visual variety, no extra content) */
+    .info-highlight {
+      background: #fafafa;
+      border-left: 6px solid #ff6600;
+      padding: 1.2rem 1.8rem;
+      margin: 2rem 0 1.8rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .info-highlight p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* MAP SECTION – full width, responsive */
+    .map-section {
+      padding: 30px 0 20px 0;
+      background: #ffffff;
+      border-top: 2px solid #f0f0f0;
+      margin-top: 1.2rem;
+    }
+
+    .map-section h2 {
+      font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+      font-weight: 700;
+      color: #ff6600;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      background: #eaeaea;
+      border-radius: 10px;
+      border: 2px solid #000000;
+      margin: 16px 0 10px 0;
+    }
+
+    .map-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* FOOTER – black/dark, orange accents */
+    .article-footer {
+      background: #111111;
+      color: #ffffff;
+      padding: 36px 0 32px 0;
+      border-top: 5px solid #ff6600;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px 30px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      max-width: 150px;
+      height: auto;
+      filter: brightness(0) invert(1); /* white logo on dark */
+    }
+
+    .footer-info {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #dddddd;
+    }
+
+    .footer-info strong {
+      color: #ff6600;
+      font-weight: 600;
+    }
+
+    .footer-address {
+      font-style: normal;
+      color: #cccccc;
+    }
+
+    .footer-phone {
+      font-weight: 600;
+      color: #ffffff;
+      background: #2a2a2a;
+      padding: 4px 16px;
+      border-radius: 30px;
+      display: inline-block;
+      border: 1px solid #ff6600;
+    }
+
+    .footer-phone span {
+      color: #ff6600;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #777777;
+      margin-top: 20px;
+      text-align: center;
+      width: 100%;
+      border-top: 1px solid #2a2a2a;
+      padding-top: 20px;
+    }
+
+    /* responsive fine-tune */
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .brand-name {
+        font-size: 1.1rem;
+        padding-left: 10px;
+        border-left: 2px solid #ff6600;
+      }
+      .header-phone {
+        font-size: 1rem;
+        padding: 4px 14px;
+        align-self: flex-start;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-title h1 {
+        font-size: 2rem;
+      }
+      .article-body h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* ensure images (if any) are responsive */
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      margin: 0.8rem 0;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* no extra space between paragraphs */
+    .article-body p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* link styling */
+    a {
+      color: #ff6600;
+      text-decoration: underline;
+      font-weight: 600;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: #cc5200;
+    }
+
+    /* exactly 3 links — no extra decoration */
+    .article-body a:not([class]) {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="article-header">
+  <div class="container header-inner">
+    <div class="header-logo-area">
+      <img class="logo-img" src="https://static.wixstatic.com/media/01240c_36cab709bb49437f8b7e3b32a4fa22cd~mv2.png/v1/fill/w_235,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/JMaster%20Trailer%20Repair_PB_26052023_1.png" alt="JMaster Trailer Repair Logo">
+      <span class="brand-name">JMaster Trailer Repair</span>
+    </div>
+    <div class="header-phone"><span>📞</span> (210) 314-1028</div>
+  </div>
+</header>
+
+<!-- ===== TITLE ===== -->
+<section class="hero-title">
+  <div class="container">
+    <h1>What Is a Trailer Repair Shop and What Services Does It Provide?</h1>
+    <span class="title-accent"></span>
+  </div>
+</section>
+
+<!-- ===== ARTICLE BODY ===== -->
+<main class="article-body">
+  <div class="container">
+
+    <!-- PARAGRAPH 1 (FIRST LINK → GMB) -->
+    <p>Trailers handle heavy loads and spend long hours on busy roads. Because of this, they experience regular wear and tear. Brakes, tires, suspension parts, landing gear, and air systems can all develop problems over time.</p>
+
+    <p>When these issues appear, professional repairs can help keep a trailer safe and reliable. A <a href="https://maps.app.goo.gl/Dhyo46NzwJzSWbp49" target="_blank" rel="noopener noreferrer">trusted Trailer repair shop in San Antonio TX</a> can inspect, diagnose, and repair different trailer systems based on their condition.</p>
+
+    <p>JMaster Trailer Repair provides professional trailer repair solutions for owners and fleet operators. Understanding the services offered by a trailer repair shop can help you recognize problems early and keep your equipment ready for the road.</p>
+
+    <!-- H2 -->
+    <h2>What Is a Trailer Repair Shop?</h2>
+    <p>A <strong>Trailer repair shop</strong> is a professional facility that inspects, maintains, and repairs trailers. These shops may work on different types of commercial and heavy-duty trailers.</p>
+    <p>Trailer repair can involve mechanical systems, air systems, brakes, suspension components, landing gear, and other parts. The exact services depend on the shop's equipment and experience.</p>
+    <p>A professional inspection can help identify worn or damaged components before they create larger problems.</p>
+    <p>For trailer owners, having a reliable repair shop can make maintenance easier. Instead of waiting until a trailer breaks down, owners can schedule inspections and address concerns early.</p>
+
+    <h2>What Does a Trailer Repair Shop Inspect?</h2>
+    <p>A trailer inspection can cover several important systems. Technicians may check brakes, suspension, tires, lights, air lines, landing gear, and other components.</p>
+    <p>The inspection process helps identify visible damage, unusual wear, leaks, loose parts, or other mechanical concerns.</p>
+    <p>Regular inspections are especially useful for trailers that travel frequently or carry heavy loads.</p>
+    <p>A technician can also explain which repairs require immediate attention and which issues may be monitored.</p>
+    <p>This allows owners to make informed decisions about trailer maintenance.</p>
+
+    <h2>How Does Air System Repair Help?</h2>
+    <p>Many commercial trailers rely on air systems for important functions. Problems with air lines, valves, connections, or related components can affect trailer performance.</p>
+    <p>Professional <strong>Air system repair</strong> focuses on identifying and fixing these problems.</p>
+    <p>Air leaks may reduce system pressure and affect braking performance. A damaged line or faulty component may also cause operational issues.</p>
+    <p>A technician can inspect the air system and identify the source of a problem.</p>
+    <p>Repairing air system issues early can help prevent more serious problems later. It can also help keep the trailer operating properly during regular road use.</p>
+
+    <h2>When Does a Trailer Need Brake Repair?</h2>
+    <p>Brakes are among the most important safety components on any trailer. They need to work properly whenever a trailer is carrying a load.</p>
+    <p>Professional <strong>Breaks repair</strong> can address problems involving worn components, damaged parts, or other braking concerns.</p>
+    <p>Some warning signs may include unusual sounds, reduced braking performance, uneven braking, or visible component damage.</p>
+    <p>Trailer owners should not ignore brake concerns. A braking problem can become more serious if the trailer continues operating without proper inspection.</p>
+    <p>Routine brake checks can help identify wear before it becomes a major repair issue.</p>
+
+    <h2>What Is Trailer Landing Gear Repair?</h2>
+    <p>Landing gear supports a trailer when it is disconnected from a towing vehicle. It allows the trailer to remain stable while parked or being loaded and unloaded.</p>
+    <p><strong>Trailer landing gear repair</strong> may be needed when the mechanism becomes difficult to operate, damaged, bent, or worn.</p>
+    <p>Landing gear experiences significant pressure, especially when supporting a loaded trailer.</p>
+    <p>A technician can inspect the components and determine whether repair or replacement is needed.</p>
+    <p>Keeping landing gear in good condition can make trailer handling safer and more convenient.</p>
+
+    <h2>How Does Suspension Repair Improve Trailer Performance?</h2>
+    <p>The suspension system helps support the trailer and manage the movement created while traveling over roads.</p>
+    <p><strong>Suspension repair</strong> may address worn components, damaged parts, uneven trailer movement, or other suspension concerns.</p>
+    <p>A trailer with suspension problems may show unusual tire wear or handling issues.</p>
+    <p>Ignoring these signs can place additional stress on other components.</p>
+    <p>Regular inspections can help identify suspension problems early. Professional repairs can restore the system and help the trailer operate more smoothly.</p>
+
+    <h2>Why Is Fleet Maintenance Important?</h2>
+    <p>Companies operating multiple trailers have more maintenance responsibilities than individual owners. Keeping track of several trailers can become difficult without an organized plan.</p>
+    <p><strong>Fleet maintenance</strong> helps businesses monitor the condition of their equipment and schedule repairs.</p>
+    <p>Regular maintenance can reduce unexpected downtime and make repair needs easier to manage.</p>
+    <p>A fleet maintenance program may include inspections, preventive repairs, brake checks, suspension inspections, and other routine services.</p>
+    <p>Businesses can also keep records of completed work and upcoming maintenance needs.</p>
+    <p>This organized approach can help fleet operators manage their equipment more efficiently.</p>
+
+    <h2>Can Regular Trailer Repair Prevent Major Problems?</h2>
+    <p>Regular maintenance cannot prevent every mechanical failure, but it can help identify developing problems.</p>
+    <p>For example, a small air leak may be easier to repair before it damages other components. Similarly, worn suspension parts can be addressed before they contribute to additional wear.</p>
+    <p>Ignoring minor problems often allows them to become more complicated.</p>
+    <p>Routine inspections give technicians an opportunity to identify worn or damaged parts.</p>
+    <p>For trailer owners, this proactive approach can help reduce unexpected breakdowns and potentially lower long-term repair costs.</p>
+
+    <!-- MIDDLE OF ARTICLE → SECOND LINK (website) -->
+    <h2>How Do You Choose a Reliable Trailer Repair Shop?</h2>
+    <p>Choosing the right repair shop is important for maintaining commercial equipment. Start by looking for a provider that offers the specific services your trailer requires.</p>
+    <p>Ask about experience with your trailer type and the systems they repair.</p>
+    <p>You should also consider communication, service availability, turnaround times, and customer feedback.</p>
+    <p>If you operate multiple trailers, ask whether the company can support ongoing fleet maintenance.</p>
+    <p>For businesses and trailer owners searching for a <strong>Trailer repair shop in San Antonio TX</strong>, <a href="https://www.jmastertrailerrepair.com" target="_blank" rel="noopener noreferrer">JMaster Trailer Repair</a> provides services for different trailer repair and maintenance needs.</p>
+    <p>Discussing your trailer's condition with the repair provider can help determine which services are appropriate.</p>
+
+    <!-- FAQ SECTION (headings as H3, content as paragraphs) -->
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What services does a trailer repair shop provide?</h3>
+    <p>A trailer repair shop may provide brake repairs, air system repairs, suspension repairs, landing gear repairs, inspections, and other mechanical services. Available services vary by provider.</p>
+
+    <h3>How often should a trailer be inspected?</h3>
+    <p>Inspection frequency depends on trailer use, mileage, load conditions, age, and manufacturer recommendations. Trailers used frequently may require more regular inspections.</p>
+
+    <h3>What are common signs of trailer brake problems?</h3>
+    <p>Unusual braking sounds, reduced braking performance, uneven braking, and visible wear can indicate potential brake problems. Professional inspection is recommended when these signs appear.</p>
+
+    <h3>Why is trailer suspension repair important?</h3>
+    <p>Suspension problems can affect handling, tire wear, stability, and overall trailer performance. Early repairs can help prevent additional component damage.</p>
+
+    <h3>Can a repair shop help with fleet maintenance?</h3>
+    <p>Yes. Some repair shops provide ongoing <strong>Fleet maintenance</strong> services for businesses operating multiple trailers. A maintenance plan can help track inspections and repair needs.</p>
+
+    <!-- CONCLUSION + THIRD LINK (website) -->
+    <h2>Conclusion</h2>
+    <p>A trailer repair shop provides important services that help keep trailers safe, functional, and ready for regular use. Professional technicians can inspect and repair systems such as brakes, air components, suspension, and landing gear.</p>
+    <p>Services such as <strong>Air system repair</strong>, <strong>Breaks repair</strong>, <strong>Trailer landing gear repair</strong>, and <strong>Suspension repair</strong> can address common trailer problems before they become more serious.</p>
+    <p>Businesses with multiple trailers can also benefit from organized <strong>Fleet maintenance</strong>. Regular inspections and preventive repairs can help reduce unexpected downtime and improve equipment management.</p>
+    <p>For trailer owners searching for a <strong>Trailer repair shop in San Antonio TX</strong>, <a href="https://www.jmastertrailerrepair.com" target="_blank" rel="noopener noreferrer">JMaster Trailer Repair</a> provides professional repair and maintenance solutions. Regular attention to your trailer's major systems can help protect your equipment and keep it ready for the road.</p>
+
+  </div>
+</main>
+
+<!-- ===== MAP SECTION ===== -->
+<section class="map-section">
+  <div class="container">
+    <h2>📍 Find Us on Google Maps</h2>
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.3700281598467!2d-98.35098699999999!3d29.388729599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865cf182a72618a3%3A0x2cd27f399ac8a172!2sJMaster%20Trailer%20Repair!5e0!3m2!1sen!2s!4v1787668383331!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="article-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="https://static.wixstatic.com/media/01240c_36cab709bb49437f8b7e3b32a4fa22cd~mv2.png/v1/fill/w_235,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/JMaster%20Trailer%20Repair_PB_26052023_1.png" alt="JMaster Trailer Repair">
+        <div class="footer-info">
+          <strong>JMaster Trailer Repair</strong><br>
+          <span class="footer-address">7096 US Hwy 87 E, San Antonio, TX 78263, United States</span>
+        </div>
+      </div>
+      <div class="footer-phone"><span>📞</span> (210) 314-1028</div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 JMaster Trailer Repair — Professional Trailer Repair
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
